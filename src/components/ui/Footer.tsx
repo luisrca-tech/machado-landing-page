@@ -1,6 +1,6 @@
 export function Footer() {
   return (
-    <footer className="bg-[#0f1b2b] text-white py-10 px-5 text-sm lg:py-20 mx-auto w-full max-w-[120rem] 3xl:px-40 lg:px-20">
+    <footer className="bg-[#0f1b2b] text-white py-10 px-4 text-sm lg:py-20 mx-auto w-full max-w-[120rem] 3xl:px-40 lg:px-20">
       <div className="grid grid-cols-1 md:grid-cols-4 gap-8 md:gap-12">
         {/* Legal */}
         <div className="mb-6 md:mb-0 lg:col-span-2">
