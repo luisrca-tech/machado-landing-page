@@ -3,6 +3,7 @@ import "~/styles/globals.css";
 import type { Metadata } from "next";
 import { Geist } from "next/font/google";
 import { Header } from "~/components/ui/Header";
+import { Footer } from "~/components/ui/Footer";
 
 export const metadata: Metadata = {
   title: "Advogados Machado",
@@ -26,6 +27,7 @@ export default function RootLayout({
       <body className="bg-[#0f1b2b]">
         <Header />
         {children}
+        <Footer />
       </body>
     </html>
   );
