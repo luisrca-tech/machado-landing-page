@@ -56,7 +56,7 @@ export function WhatTheySay() {
             {testimonials.map((testimonial) => (
               <div
                 key={testimonial.id}
-                className="mx-4 bg-white p-6 rounded-lg min-w-[300px] max-w-[350px] shadow-lg"
+                className="mx-4 bg-white p-6 rounded-lg w-96 shadow-lg flex flex-col justify-between"
               >
                 <div className="flex items-center mb-3">
                   <div className="flex mr-2">
