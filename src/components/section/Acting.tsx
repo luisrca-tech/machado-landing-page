@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import WhatsappIcon from "public/icons/wpp.png";
 import { Fade } from "react-awesome-reveal";
+import { actingCasesItems } from "~/constants/actingCasesItems";
 
 export function Acting() {
   return (
@@ -29,57 +30,17 @@ export function Acting() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto mb-12">
-            {/* Case 1 */}
-            <div className="flex items-center gap-4 bg-white/10 p-4 rounded-lg backdrop-blur-sm">
-              <div className="bg-white/20 rounded-full p-3 text-white text-xl flex-shrink-0">
-                📌
+            {actingCasesItems.map((item, i) => (
+              <div
+                key={i}
+                className="flex items-center gap-4 bg-white/10 p-4 rounded-lg backdrop-blur-sm"
+              >
+                <div className="bg-white/20 rounded-full p-3 text-white text-xl flex-shrink-0">
+                  📌
+                </div>
+                <p className="text-white">{item.title}</p>
               </div>
-              <p className="text-white">Sua carteira não foi assinada</p>
-            </div>
-
-            {/* Case 2 */}
-            <div className="flex items-center gap-4 bg-white/10 p-4 rounded-lg backdrop-blur-sm">
-              <div className="bg-white/20 rounded-full p-3 text-white text-xl flex-shrink-0">
-                📌
-              </div>
-              <p className="text-white">Foi demitido e não recebeu nada</p>
-            </div>
-
-            {/* Case 3 */}
-            <div className="flex items-center gap-4 bg-white/10 p-4 rounded-lg backdrop-blur-sm">
-              <div className="bg-white/20 rounded-full p-3 text-white text-xl flex-shrink-0">
-                📌
-              </div>
-              <p className="text-white">Fez horas extras e não recebeu</p>
-            </div>
-
-            {/* Case 4 */}
-            <div className="flex items-center gap-4 bg-white/10 p-4 rounded-lg backdrop-blur-sm">
-              <div className="bg-white/20 rounded-full p-3 text-white text-xl flex-shrink-0">
-                📌
-              </div>
-              <p className="text-white">A empresa não deposita o FGTS</p>
-            </div>
-
-            {/* Case 5 */}
-            <div className="flex items-center gap-4 bg-white/10 p-4 rounded-lg backdrop-blur-sm">
-              <div className="bg-white/20 rounded-full p-3 text-white text-xl flex-shrink-0">
-                📌
-              </div>
-              <p className="text-white">
-                Está trabalhando como PJ e cumprindo horário
-              </p>
-            </div>
-
-            {/* Case 6 */}
-            <div className="flex items-center gap-4 bg-white/10 p-4 rounded-lg backdrop-blur-sm">
-              <div className="bg-white/20 rounded-full p-3 text-white text-xl flex-shrink-0">
-                📌
-              </div>
-              <p className="text-white">
-                A empresa não paga adicional de insalubridade
-              </p>
-            </div>
+            ))}
           </div>
 
           <div className="text-center">

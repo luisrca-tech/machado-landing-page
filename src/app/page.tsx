@@ -4,6 +4,7 @@ import { OurBenefits } from "~/components/section/OurBenefits";
 import { WhoWeAre } from "~/components/section/WhoWeAre";
 import { Container } from "~/components/ui/Container";
 import Office from "public/images/officePhoto.jpg";
+import { Faq } from "~/components/section/Faq";
 
 export default function HomePage() {
   return (
@@ -28,7 +29,7 @@ export default function HomePage() {
           <img
             src={Office.src}
             alt="Escritório Machado Advogados"
-            className="w-full h-full object-cover object-center blur-sm brightness-75"
+            className="w-full h-full object-cover object-center blur-xs brightness-80"
             draggable={false}
           />
         </div>
@@ -37,6 +38,11 @@ export default function HomePage() {
             <WhoWeAre />
           </Container>
         </div>
+      </section>
+      <section className="py-10 lg:py-20 bg-[#f9f9f9]">
+        <Container>
+          <Faq />
+        </Container>
       </section>
     </main>
   );
