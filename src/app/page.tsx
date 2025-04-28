@@ -5,6 +5,7 @@ import { WhoWeAre } from "~/components/section/WhoWeAre";
 import { Container } from "~/components/ui/Container";
 import Office from "public/images/officePhoto.jpg";
 import { Faq } from "~/components/section/Faq";
+import { WhatTheySay } from "~/components/section/WhatTheySay";
 
 export default function HomePage() {
   return (
@@ -50,6 +51,14 @@ export default function HomePage() {
             <WhoWeAre />
           </Container>
         </div>
+      </section>
+      <section
+        className="py-10 lg:py-20"
+        id="what-they-say"
+      >
+        <Container>
+          <WhatTheySay />
+        </Container>
       </section>
       <section
         className="py-10 lg:py-20 bg-[#f9f9f9]"
