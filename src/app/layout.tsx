@@ -6,7 +6,7 @@ import { Header } from "~/components/ui/Header";
 import { Footer } from "~/components/ui/Footer";
 
 export const metadata: Metadata = {
-  title: "Advogados Machado",
+  title: "Machado Advogados",
   description: "Advogados Machado",
   icons: [{ rel: "icon", url: "/favicon.png" }],
 };
