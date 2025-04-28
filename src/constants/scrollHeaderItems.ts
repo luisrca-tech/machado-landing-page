@@ -2,19 +2,19 @@ import type { ScrollHeaderItem } from "~/types/scrollHeaderItem.type";
 
 export const scrollHeaderItems: ScrollHeaderItem[] = [
 	{
-		id: "beneficios",
+		id: "benefits",
 		label: "Benefícios",
 	},
 	{
-		id: "atuacao",
+		id: "acting",
 		label: "Área de Atuação",
 	},
 	{
-		id: "quem-somos",
+		id: "who-we-are",
 		label: "Quem somos",
 	},
 	{
-		id: "oque-dizem",
+		id: "what-they-say",
 		label: "O que dizem",
 	},
 	{
