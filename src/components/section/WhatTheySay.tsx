@@ -1,83 +1,84 @@
-import Image from "next/image";
-import GoogleIcon from "public/icons/google.jpeg";
-import { Fade } from "react-awesome-reveal";
-import { Marquee } from "../magicui/marquee";
+"use client";
 
-const testimonials = [
-	{
-		id: 1,
-		name: "João S.",
-		text: "Fui muito bem atendido. Em pouco tempo já estava com tudo resolvido. Recomendo!",
-		rating: 5,
-	},
-	{
-		id: 2,
-		name: "Maria F.",
-		text: "Tive todas as minhas dúvidas respondidas com clareza. Atendimento humanizado de verdade.",
-		rating: 5,
-	},
-	{
-		id: 3,
-		name: "Carlos A.",
-		text: "Falei no WhatsApp e recebi orientação no mesmo dia. Nota 10!",
-		rating: 5,
-	},
-];
+import { Star } from "lucide-react";
+import Image from "next/image";
+import { Fade } from "react-awesome-reveal";
+import { testimonialsItems } from "~/constants/testimonialsItems";
+import { Marquee } from "../magicui/marquee";
+import { WppButton } from "../ui/WppButton";
 
 export function WhatTheySay() {
 	return (
 		<Fade triggerOnce direction="up" cascade damping={0.15}>
-			<section className="relative overflow-hidden bg-[#0f1b2b] py-16">
-				{/* Background texture overlay */}
-				<div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+CiAgPHBhdGggZD0iTTAgMGg2MHY2MEgweiIgZmlsbD0ibm9uZSIvPgogIDxwYXRoIGQ9Ik0wIDBoNjB2NjBIMHoiIGZpbGw9Im5vbmUiLz4KICA8cGF0aCBkPSJNMzAgMzBoMXYxaC0xeiIgZmlsbD0iI2ZmZiIvPgo8L3N2Zz4=')] opacity-10"></div>
-
-				<div className="container relative z-10 mx-auto px-4">
-					<div className="mb-12 text-center">
-						<h2 className="mb-4 font-bold text-3xl text-white">
-							O que dizem sobre nós?
-						</h2>
-						<p className="mx-auto max-w-3xl text-gray-300">
-							O Dr. Rafael Machado é sócio da Machado Advogados, que possui
-							excelência em atendimento, estando aberto há mais de 5 anos no
-							mercado, com atuação em mais de 1.000 processos e clientes
-							satisfeitos em todo país.
+			<div className="container mx-auto px-4">
+				<div className="mb-12 text-center">
+					<h2 className="mb-4 font-bold text-3xl text-black">
+						O que dizem sobre nós?
+					</h2>
+					<div className="mx-auto max-w-3xl">
+						<p className="mb-6 text-gray-700 text-lg">
+							Com mais de{" "}
+							<span className="font-bold text-[#c4a35a]">
+								7 anos de atuação
+							</span>{" "}
+							no mercado jurídico e{" "}
+							<span className="font-bold text-[#c4a35a]">+1.000 processos</span>{" "}
+							trabalhistas conduzidos com sucesso, a Machado Advogados se
+							consolidou como referência em direito trabalhista.
 						</p>
 					</div>
+				</div>
 
-					<Marquee className="py-4" pauseOnHover={true}>
-						{testimonials.map((testimonial) => (
+				<div className="mx-auto max-w-6xl">
+					<Marquee pauseOnHover>
+						{testimonialsItems.map((review) => (
 							<div
-								key={testimonial.id}
-								className="mx-4 flex w-96 flex-col justify-between rounded-lg bg-white p-6 shadow-lg"
+								key={review.id}
+								className="group hover:-translate-y-1 relative mx-4 h-full w-[350px] max-w-[360px] rounded-lg bg-white p-6 shadow-md transition-all duration-300 hover:shadow-lg"
 							>
-								<div className="mb-3 flex items-center">
-									<div className="mr-2 flex">
-										{[...Array(testimonial.rating)].map((_, i) => (
-											<span key={i} className="text-[#4285F4]">
-												⭐
-											</span>
-										))}
-									</div>
-									<div className="flex items-center">
+								<div className="-right-2 -top-2 absolute flex h-8 w-8 items-center justify-center rounded-full bg-[#4285F4] shadow-md">
+									<i className="fab fa-google text-lg text-white" />
+								</div>
+								<div className="mb-4 flex items-center">
+									<div className="mr-4 h-12 w-12 overflow-hidden rounded-full border-2 border-gray-100">
 										<Image
-											src={GoogleIcon}
-											alt="Google Review"
-											width={20}
-											height={20}
-											className="mr-1"
+											src={review.profileImage}
+											alt={review.author}
+											width={48}
+											height={48}
+											className="h-full w-full object-cover"
 										/>
-										<span className="text-gray-600 text-sm">Google</span>
+									</div>
+									<div>
+										<h4 className="font-bold text-gray-800">{review.author}</h4>
+										<div className="flex text-yellow-400">
+											{Array.from({
+												length: review.rating,
+											}).map((_, i) => (
+												<Star
+													key={`${review.id}-${i}`}
+													className="h-4 w-4 fill-current"
+												/>
+											))}
+										</div>
 									</div>
 								</div>
-								<p className="mb-4 text-gray-800">"{testimonial.text}"</p>
-								<p className="font-medium text-[#4285F4]">
-									— {testimonial.name}
-								</p>
+								<p className="mb-4 line-clamp-4 text-gray-600">{review.text}</p>
+								<div className="flex items-center text-gray-400 text-sm">
+									<span>{review.date}</span>
+								</div>
 							</div>
 						))}
 					</Marquee>
+
+					<div className="mt-12 flex flex-col items-center justify-center text-center">
+						<h3 className="mb-6 font-bold text-2xl text-black">
+							Trilhe o mesmo caminho que diversos clientes satisfeitos
+						</h3>
+						<WppButton text="Fale conosco agora!" />
+					</div>
 				</div>
-			</section>
+			</div>
 		</Fade>
 	);
 }

@@ -22,7 +22,7 @@ export default function RootLayout({
 					href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
 				/>
 			</head>
-			<body className="bg-[#0f1b2b]">
+			<body className="bg-[#f9f9f9]">
 				{/* <Header /> */}
 				{children}
 				<Footer />
