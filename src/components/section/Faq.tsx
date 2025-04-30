@@ -1,9 +1,7 @@
-import { HelpCircle } from "lucide-react";
-import Image from "next/image";
-import Link from "next/link";
-import WhatsappIcon from "public/icons/wpp.png";
+import { Plus } from "lucide-react";
 import { Fade } from "react-awesome-reveal";
 import { faqItems } from "~/constants/faqItems";
+import { WppButton } from "../ui/WppButton";
 import {
 	Accordion,
 	AccordionContent,
@@ -14,31 +12,37 @@ import {
 export function Faq() {
 	return (
 		<Fade triggerOnce direction="up" cascade damping={0.15}>
-			<div className="mx-auto flex max-w-3xl flex-col items-center gap-6">
-				<div className="mb-4 flex flex-col items-center gap-2">
-					<HelpCircle className="h-12 w-12 text-blue-600" />
-					<h2 className="text-center font-bold text-3xl">
-						Ficou com alguma dúvida? A gente responde:
-					</h2>
+			<div className="container mx-auto px-4">
+				<h2 className="mb-12 text-center font-bold text-3xl text-black">
+					Ficou com alguma dúvida? A gente responde:
+				</h2>
+
+				<div className="mx-auto max-w-3xl">
+					<Accordion type="single" collapsible>
+						{faqItems.map((item) => (
+							<AccordionItem
+								key={item.question}
+								value={`item-${item.question}`}
+								className="border-gray-200 border-b pb-4"
+							>
+								<AccordionTrigger className="font-bold text-black text-lg hover:no-underline">
+									<span>{item.question}</span>
+									<Plus className="size-5 text-[#c4a35a]" />
+								</AccordionTrigger>
+								<AccordionContent className="text-gray-700">
+									{item.answer}
+								</AccordionContent>
+							</AccordionItem>
+						))}
+					</Accordion>
 				</div>
-				<Accordion type="single" collapsible className="w-full">
-					{faqItems.map((item, i) => (
-						<AccordionItem value={`item-${i + 1}`} key={item.question}>
-							<AccordionTrigger className="flex gap-2 font-semibold text-lg">
-								<span>{item.question}</span>
-							</AccordionTrigger>
-							<AccordionContent>{item.answer}</AccordionContent>
-						</AccordionItem>
-					))}
-				</Accordion>
-				<Link
-					href="https://wa.me/+556284015585"
-					className="inline-flex items-center gap-2 rounded-md bg-green-500 px-6 py-3 text-white transition-all duration-300 hover:bg-green-600"
-					target="_blank"
-				>
-					<Image src={WhatsappIcon} alt="Whatsapp" width={24} height={24} />
-					<span>Fale conosco agora</span>
-				</Link>
+
+				<div className="mt-12 flex flex-col items-center justify-center">
+					<p className="mb-6 text-xl">
+						Se ficou ainda alguma dúvida. Fale diretamente com a gente
+					</p>
+					<WppButton text="Fale conosco agora!" />
+				</div>
 			</div>
 		</Fade>
 	);

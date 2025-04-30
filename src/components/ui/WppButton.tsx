@@ -12,7 +12,7 @@ export function WppButton({
 		<Link
 			href="https://wa.me/+556284015585"
 			className={cn(
-				"flex w-fit transform items-center justify-center gap-2 rounded-full bg-[#25D366] px-8 py-4 font-bold text-white leading-6 transition-transform duration-300 hover:scale-105",
+				"flex w-fit transform items-center justify-center gap-2 rounded-full bg-[#25D366] px-8 py-4 font-bold font-bold text-white leading-6 transition-transform duration-300 hover:scale-105",
 				className,
 			)}
 			target="_blank"
