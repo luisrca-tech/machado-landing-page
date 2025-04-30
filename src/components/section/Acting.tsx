@@ -1,59 +1,51 @@
-import Image from "next/image";
-import Link from "next/link";
-import WhatsappIcon from "public/icons/wpp.png";
 import { Fade } from "react-awesome-reveal";
-import { actingCasesItems } from "~/constants/actingCasesItems";
+import { WppButton } from "../ui/WppButton";
 
 export function Acting() {
 	return (
 		<Fade triggerOnce direction="up" cascade damping={0.15}>
-			<div className="relative overflow-hidden bg-[#0f1b2b]">
-				{/* Background texture overlay */}
-				<div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+CiAgPHBhdGggZD0iTTAgMGg2MHY2MEgweiIgZmlsbD0ibm9uZSIvPgogIDxwYXRoIGQ9Ik0wIDBoNjB2NjBIMHoiIGZpbGw9Im5vbmUiLz4KICA8cGF0aCBkPSJNMzAgMzBoMXYxaC0xeiIgZmlsbD0iI2ZmZiIvPgo8L3N2Zz4=')] opacity-10"></div>
+			<div className="container mx-auto px-4">
+				<h2 className="mb-2 text-center font-bold text-3xl text-white">
+					Em quais casos um advogado trabalhista pode te ajudar?
+				</h2>
+				<div className="mx-auto mb-10 h-0.5 w-20 bg-white" />
 
-				<div className="relative">
-					<div className="mb-10 text-center">
-						<h2 className="mb-4 font-bold text-3xl text-white">
-							Em quais casos um advogado trabalhista pode te ajudar?
-						</h2>
-						<p className="mx-auto max-w-3xl text-gray-300">
-							É bem simples saber se sua situação pode ser avaliada por um
-							advogado trabalhista. Se você trabalha e desconfia que passa por
-							situação ilegal no seu trabalho, fale agora mesmo. Veja alguns
-							casos mais comuns:
-						</p>
-					</div>
+				<p className="mb-8 text-center font-bold text-lg text-white">
+					Descobrir se sua situação pode ser avaliada por um advogado{" "}
+					<span className="text-[#c4a35a]">é bem simples</span>: <br /> caso
+					você <span className="text-[#c4a35a]">desconfie</span> que tem algo de
+					errado fale agora mesmo. Veja alguns <br /> casos mais comuns:
+				</p>
 
-					<div className="mx-auto mb-12 grid max-w-5xl grid-cols-1 gap-6 md:grid-cols-2">
-						{actingCasesItems.map((item, i) => (
-							<div
-								key={i}
-								className="flex items-center gap-4 rounded-lg bg-white/10 p-4 backdrop-blur-sm"
-							>
-								<div className="flex-shrink-0 rounded-full bg-white/20 p-3 text-white text-xl">
-									📌
-								</div>
-								<p className="text-white">{item.title}</p>
-							</div>
-						))}
-					</div>
-
-					<div className="text-center">
-						<p className="mb-6 text-lg text-white">
-							Qualquer que seja sua situação, é importante falar com um
-							advogado.
-						</p>
-						<Link
-							href="https://wa.me/+556284015585"
-							className="inline-flex items-center gap-2 rounded-md bg-green-500 px-6 py-3 text-white transition-all duration-300 hover:bg-green-600"
-							target="_blank"
+				<div className="my-12 grid grid-cols-1 gap-4 md:grid-cols-2 lg:mx-auto lg:max-w-4xl">
+					{[
+						{ icon: "file-signature", text: "Sua carteira não foi assinada" },
+						{ icon: "user-slash", text: "Foi demitido e não recebeu" },
+						{ icon: "clock", text: "Fez horas extras e não recebeu" },
+						{ icon: "piggy-bank", text: "A empresa não deposita o FGTS" },
+						{ icon: "briefcase", text: "Trabalha como PJ e tem horário" },
+						{ icon: "radiation", text: "Não recebe insalubridade" },
+						{ icon: "user-injured", text: "Teve um acidente no trabalho" },
+						{ icon: "baby", text: "Foi despedida grávida" },
+					].map((item) => (
+						<div
+							key={item.text}
+							className="card-hover flex items-center rounded-lg bg-[rgba(255,255,255,0.15)] p-4 shadow-md transition-all duration-300 hover:shadow-lg"
 						>
-							<Image src={WhatsappIcon} alt="Whatsapp" width={24} height={24} />
-							<span>
-								👉 Clique no botão abaixo e tire sua dúvida agora pelo WhatsApp.
-							</span>
-						</Link>
-					</div>
+							<div className="mr-4 text-[#c4a35a] text-xl">
+								<i className={`fas fa-${item.icon}`} />
+							</div>
+							<p className="font-medium text-lg text-white">{item.text}</p>
+						</div>
+					))}
+				</div>
+
+				<div className="mx-auto mb-8 flex max-w-3xl flex-col items-center justify-center gap-4 text-center">
+					<p className="mb-6 font-bold text-lg text-white">
+						Qualquer que seja sua situação, é importante falar com um advogado.
+					</p>
+
+					<WppButton text="Tire sua dúvida agora pelo WhatsApp" />
 				</div>
 			</div>
 		</Fade>
