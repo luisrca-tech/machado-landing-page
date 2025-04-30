@@ -10,8 +10,8 @@ import { Container } from "~/components/ui/Container";
 export default function HomePage() {
 	return (
 		<main>
-			<section className="pt-14 pb-10 lg:pt-32 lg:pb-20" id="hero">
-				<Container>
+			<section className="relative">
+				<Container className="z-10 py-10 lg:py-20">
 					<HeroSection />
 				</Container>
 			</section>

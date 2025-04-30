@@ -6,75 +6,59 @@ import MachadoAdvogadosPanel from "public/images/machadoAdvogadosEntry.png";
 import HeroImage from "public/images/rafaelBgTransparent.png";
 import { Fade } from "react-awesome-reveal";
 
+import OfficePhoto from "public/images/officePhoto.jpg";
+import { WppButton } from "../ui/WppButton";
+
 export function HeroSection() {
 	return (
-		<Fade triggerOnce direction="down" cascade damping={0.15}>
-			<div className="relative grid grid-cols-1 items-center justify-center gap-5 lg:grid-cols-2 lg:items-start lg:justify-start">
-				<div className="z-10 flex flex-col items-center justify-center lg:items-start lg:justify-start">
-					<div className="h-32 w-32 md:h-48 md:w-48 lg:h-56 lg:w-72">
-						<Image
-							src={LogoTransparent}
-							alt="Logo"
-							className="h-full w-full object-center"
-							priority
-						/>
-					</div>
-					<div className="flex flex-col items-center justify-center gap-2 text-center lg:items-start lg:justify-start lg:text-start">
-						<h1 className="font-medium text-amber-100 text-sm md:text-xl">
+		<Fade
+			triggerOnce
+			direction="down"
+			cascade
+			damping={0.15}
+			className="flex flex-col justify-between"
+		>
+			<div className="w-fit transform rounded-md bg-[#C4A35A] p-6 uppercase transition-transform duration-300 hover:scale-105">
+				<h1 className="font-bold text-2xl text-white">Machado Advogados</h1>
+			</div>
+
+			<div className="relative grid grid-cols-1 items-center gap-8 lg:grid-cols-2">
+				<div className="z-10 flex flex-col gap-6">
+					<div className="flex flex-col gap-4">
+						<strong className="font-medium text-[#C4A35A] text-sm uppercase tracking-wider">
 							DR. RAFAEL MACHADO NASCIMENTO – ADVOGADO RECOMENDADO
-						</h1>
-						<span className="font-medium text-amber-100 text-sm md:text-xl">
-							Fale com um advogado trabalhista agora.
+						</strong>
+						<span className="font-bold text-3xl text-white md:text-5xl lg:text-6xl">
+							Proteção jurídica para seus direitos trabalhistas
 						</span>
-						<span className="font-medium text-amber-100 text-sm md:text-xl">
-							Algo errado no seu trabalho? Descubra o que fazer.
+						<span className="text-lg text-white/90 md:text-xl">
+							Se você enfrenta problemas no trabalho, não espere para buscar
+							seus direitos. Converse agora com um especialista.
 						</span>
-						{/* This is the desktop button */}
-						<Link
-							href="https://wa.me/+556284015585"
-							className="mt-4 hidden items-center justify-center gap-2 rounded-md bg-green-500 px-4 py-2 text-emerald-50 text-lg transition-all duration-300 hover:bg-emerald-300 hover:text-green-500 lg:flex"
-							target="_blank"
-						>
-							<Image
-								src={WhatsappIcon}
-								alt="Whatsapp"
-								width={26}
-								height={26}
-								className=""
-							/>
-							<span>Fale com um advogado trabalhista agora.</span>
-						</Link>
-						<span className="font-medium text-amber-100 text-sm md:text-xl">
+					</div>
+
+					<div className="flex flex-col gap-3">
+						<WppButton className="mt-8 hidden lg:flex" />
+
+						<span className="text-base text-white/70">
 							Atendimento sigiloso • Resposta rápida • Análise gratuita
 						</span>
 					</div>
 				</div>
-				<div className="relative h-full w-full lg:static">
+
+				<div className="relative aspect-[4/3] w-full lg:aspect-auto lg:h-[600px]">
 					<Image
-						src={MachadoAdvogadosPanel}
+						src={OfficePhoto}
 						alt="Machado Advogados"
 						className="h-full w-full rounded-md object-cover md:max-h-[80%] lg:min-h-full"
 					/>
-					<div className="lg:-translate-x-1/2 absolute top-0 flex h-full w-full items-center justify-center md:h-[80%] lg:top-11 lg:hidden lg:h-full 2xl:block">
+					<div className="-left-1/2 absolute bottom-0 flex h-full w-full md:h-[80%] lg:h-full">
 						<Image
 							src={HeroImage}
 							alt="Hero"
-							className="h-full w-full object-contain"
+							className="absolute h-full w-full object-contain"
 						/>
-						<Link
-							href="https://wa.me/+556284015585"
-							className="absolute right-0 bottom-20 left-0 mx-4 mt-4 flex items-center justify-center gap-2 rounded-md bg-green-500 p-2 text-emerald-50 text-xs transition-all duration-300 hover:bg-emerald-300 hover:text-green-500 md:bottom-50 md:text-base lg:hidden"
-							target="_blank"
-						>
-							<Image
-								src={WhatsappIcon}
-								alt="Whatsapp"
-								width={26}
-								height={26}
-								className=""
-							/>
-							<span>Fale com um advogado trabalhista agora.</span>
-						</Link>
+						<WppButton className="absolute right-0 bottom-20 left-0 lg:hidden" />
 					</div>
 				</div>
 			</div>
