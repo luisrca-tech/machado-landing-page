@@ -11,7 +11,7 @@ export default function HomePage() {
 	return (
 		<main>
 			<section className="relative">
-				<Container className="z-10 py-10 lg:py-20 px-0">
+				<Container className="z-10 px-0 py-10 lg:py-20">
 					<HeroSection />
 				</Container>
 			</section>
