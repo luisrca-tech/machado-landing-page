@@ -33,7 +33,7 @@ export default function HomePage() {
           <WhoWeAre />
         </Container>
       </section>
-      <section className="bg-[#F9FAFB] pb-10 lg:py-20">
+      <section className="bg-[#F9FAFB] pb-10 md:py-20">
         <WhatTheySay />
       </section>
       <section
