@@ -11,11 +11,11 @@ export default function HomePage() {
 	return (
 		<main>
 			<section className="relative">
-				<Container className="z-10 px-0 py-10 lg:py-20">
+				<Container className="z-10 px-0 py-8">
 					<HeroSection />
 				</Container>
 			</section>
-			<section className="bg-[#f9f9f9] py-10 lg:py-20" id="benefits">
+			<section className="bg-[#f9f9f9] py-10 lg:py-16" id="benefits">
 				<Container>
 					<OurBenefits />
 				</Container>
