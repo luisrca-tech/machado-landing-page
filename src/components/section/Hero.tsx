@@ -44,19 +44,19 @@ export function HeroSection() {
 					</div>
 				</div>
 
-				<div className="relative aspect-[4/3] w-full lg:aspect-auto lg:h-[600px] lg:px-4">
+				<div className="relative aspect-[4/3] w-full md:h-[400px] lg:aspect-auto lg:h-[600px] lg:px-4">
 					<Image
 						src={OfficePhoto}
 						alt="Machado Advogados"
-						className="h-full w-full rounded-md object-cover blur-xs md:max-h-[80%] lg:min-h-full lg:blur-none"
+						className="h-full w-full rounded-md object-cover blur-xs lg:min-h-full lg:blur-none"
 					/>
-					<div className="lg:-left-1/2 -bottom-0.5 absolute flex h-full w-full items-center justify-center md:h-[80%] lg:bottom-0 lg:h-full">
+					<div className="lg:-left-1/2 -bottom-0.5 absolute flex h-full w-full items-center justify-center lg:bottom-0 lg:h-full">
 						<Image
 							src={HeroImage}
 							alt="Hero"
 							className="absolute h-full w-full object-contain"
 						/>
-						<div className="absolute right-0 bottom-10 left-0 z-10 flex flex-col items-center justify-center gap-1 lg:hidden">
+						<div className="absolute right-0 bottom-10 left-0 z-10 flex flex-col items-center justify-center gap-1 md:bottom-15 lg:hidden">
 							<WppButton className="text-xs" />
 						</div>
 					</div>
