@@ -33,7 +33,7 @@ export function HeroSection() {
 							<span className="font-bold text-2xl text-white md:text-5xl lg:text-6xl">
 								Está procurando advogado trabalhista?
 							</span>
-							<div className="mx-auto mb-2 h-1.5 w-20 bg-[#c4a35a]" />
+							<div className="mx-auto mb-2 h-1.5 w-20 bg-[#c4a35a] lg:mx-0 lg:ml-5" />
 						</div>
 						<span className="text-lg text-white/90 md:text-xl">
 							Se você enfrenta problemas no trabalho, não espere para buscar
