@@ -20,6 +20,8 @@ export function HeroSection() {
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-[#c4a35a]/10 via-transparent to-transparent" />
           <div className="absolute inset-0 bg-[linear-gradient(45deg,_transparent_25%,_#c4a35a/5_25%,_#c4a35a/5_50%,_transparent_50%,_transparent_75%,_#c4a35a/5_75%)] bg-[length:20px_20px]" />
           <div className="absolute inset-0 bg-gradient-to-br from-[#c4a35a]/15 to-transparent" />
+          <div className="absolute inset-0 hidden bg-[linear-gradient(120deg,_transparent_0%,_#c4a35a/10_50%,_transparent_100%)] lg:block" />
+          <div className="absolute inset-0 hidden bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-[#c4a35a]/20 via-transparent to-transparent lg:block" />
           <Image
             src={Logo}
             alt="Machado Advogados"
