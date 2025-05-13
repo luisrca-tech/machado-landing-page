@@ -15,7 +15,7 @@ export function HeroSection() {
 			damping={0.15}
 			className="flex flex-col justify-between"
 		>
-			<div className="mb-5 ml-4 flex h-20 w-80 transform items-center justify-center rounded-md bg-[#C4A35A] duration-300 hover:scale-105 lg:mb-0">
+			<div className="mb-5 ml-4 flex h-20 w-80 transform items-center justify-center rounded-md duration-300 hover:scale-105 lg:mb-0">
 				<Image
 					src={Logo}
 					alt="Machado Advogados"
@@ -26,14 +26,13 @@ export function HeroSection() {
 			<div className="relative grid grid-cols-1 items-center gap-8 lg:grid-cols-2">
 				<div className="z-10 flex flex-col gap-6 px-4">
 					<div className="flex flex-col gap-4">
-						<strong className="font-medium text-[#C4A35A] text-sm uppercase uppercase tracking-wider">
+						<strong className="font-medium text-[#C4A35A] text-sm uppercase tracking-wider">
 							Dr. Rafael Machado (Advogado Recomendado)
 						</strong>
 						<div className="flex flex-col gap-2">
 							<span className="font-bold text-2xl text-white md:text-5xl lg:text-6xl">
 								Está procurando advogado trabalhista?
 							</span>
-							<div className="mx-auto mb-2 h-1.5 w-20 bg-[#c4a35a] lg:mx-0 lg:ml-5" />
 						</div>
 						<span className="text-lg text-white/90 md:text-xl">
 							Se você enfrenta problemas no trabalho, não espere para buscar
