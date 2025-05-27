@@ -6,11 +6,9 @@ import "./src/env.js";
 
 /** @type {import("next").NextConfig} */
 const config = {
-  images: {
-    domains: [
-      "upload.wikimedia.org"
-    ]
-  }
+	images: {
+		domains: ["upload.wikimedia.org"],
+	},
 };
 
 export default config;
