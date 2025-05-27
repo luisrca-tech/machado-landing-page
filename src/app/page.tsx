@@ -1,41 +1,45 @@
-import Office from "public/images/officePhoto.jpg";
-import { Acting } from "~/components/section/Acting";
-import { Faq } from "~/components/section/Faq";
+import { AreasOfPractice } from "~/components/section/AreasOfPractice";
+import { Contact } from "~/components/section/Contact";
 import { HeroSection } from "~/components/section/Hero";
-import { OurBenefits } from "~/components/section/OurBenefits";
-import { WhatTheySay } from "~/components/section/WhatTheySay";
-import { WhoWeAre } from "~/components/section/WhoWeAre";
+import { OurTeam } from "~/components/section/OurTeam";
+import { SocialProof } from "~/components/section/SocialProof";
 import { Container } from "~/components/ui/Container";
 
 export default function HomePage() {
 	return (
 		<main>
+			{/* Hero Section */}
 			<section className="relative bg-[#0f1b2b]">
 				<Container className="z-10 px-0 py-8">
 					<HeroSection />
 				</Container>
 			</section>
-			<section className="py-10 lg:py-16">
+
+			{/* Areas of Practice */}
+			<section id="atuacao" className="py-10 lg:py-16">
 				<Container>
-					<OurBenefits />
+					<AreasOfPractice />
 				</Container>
 			</section>
-			<section className="bg-[#0f1b2b] py-10 lg:py-20" id="acting">
+
+			{/* Our Team */}
+			<section id="nossa-equipe" className="bg-white/90 pt-10 lg:py-20">
 				<Container>
-					<Acting />
+					<OurTeam />
 				</Container>
 			</section>
-			<section className="bg-white/90 pt-10 lg:py-20">
+
+			{/* Social Proof */}
+			<section id="prova-social" className="py-10 lg:py-20">
 				<Container>
-					<WhoWeAre />
+					<SocialProof />
 				</Container>
 			</section>
-			<section className="pb-10 md:py-20">
-				<WhatTheySay />
-			</section>
-			<section className="bg-white/90 py-10 lg:py-20">
+
+			{/* Contact & Location */}
+			<section id="contato" className="bg-white/90 py-10 lg:py-20">
 				<Container>
-					<Faq />
+					<Contact />
 				</Container>
 			</section>
 		</main>
