@@ -77,7 +77,7 @@ export function HomeHeroSection() {
 									"Direito Trabalhista",
 									"Direito Previdenciário",
 									"Direito Penal",
-									"Direito Família",
+									"Direito de Família",
 								].map((area, index) => (
 									<div
 										key={index + area}
