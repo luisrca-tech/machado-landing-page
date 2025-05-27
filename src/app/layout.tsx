@@ -4,6 +4,7 @@ import type { Metadata } from "next";
 import { Geist } from "next/font/google";
 import { montserrat } from "~/assets/fonts/montserrat";
 import { Footer } from "~/components/ui/Footer";
+import { Header } from "~/components/ui/Header";
 import { FloatingWppButton } from "~/components/ui/WppButton";
 
 export const metadata: Metadata = {
@@ -24,7 +25,7 @@ export default function RootLayout({
 				/>
 			</head>
 			<body className="bg-[#f9f9f9]">
-				{/* <Header /> */}
+				<Header />
 				{children}
 				<div className="bg-[#0f1b2b]">
 					<Footer />

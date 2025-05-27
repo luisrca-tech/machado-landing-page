@@ -1,12 +1,14 @@
 "use client";
 
-import { MenuIcon } from "lucide-react";
+import { Briefcase, MenuIcon } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import Logo from "public/favicon.png";
 import { useEffect, useState } from "react";
 
 import { scrollHeaderItems } from "~/constants/scrollHeaderItems";
+import { cn } from "~/lib/utils";
 import {
 	Sheet,
 	SheetClose,
@@ -18,6 +20,8 @@ import {
 
 export function Header() {
 	const [scrolled, setScrolled] = useState(false);
+	const pathname = usePathname();
+	const isHome = pathname === "/";
 
 	useEffect(() => {
 		const handleScroll = () => {
@@ -33,13 +37,14 @@ export function Header() {
 
 	return (
 		<div
-			className={`fixed top-0 right-0 left-0 z-50 w-full transition-colors duration-300 ${
-				scrolled ? "bg-white/95 shadow-md" : "bg-[#0f1b2b]"
-			}`}
+			className={cn(
+				"fixed top-0 right-0 left-0 z-50 w-full bg-gradient-to-br from-slate-900 via-blue-950 to-slate-800 backdrop-blur-sm transition-colors duration-300",
+				scrolled ? "bg-white/70 shadow-md" : "bg-transparent",
+			)}
 		>
 			<header className="mx-auto w-full max-w-[120rem]">
 				<div className="flex items-center justify-between 3xl:px-40 px-4 py-2 lg:px-20">
-					<Link href="#hero" className="h-10 w-20 lg:h-20 lg:w-20">
+					<Link href="/" className="h-10 w-20 lg:h-20 lg:w-20">
 						<Image
 							src={Logo}
 							alt="Logo"
@@ -52,20 +57,19 @@ export function Header() {
 					{/* Desktop Navigation */}
 					<nav className="hidden lg:flex">
 						<ul className="flex items-center gap-20">
-							{scrollHeaderItems.map((item) => (
-								<li key={item.id}>
-									<Link
-										className={`font-medium text-base ${
-											scrolled
-												? "text-gray-800 hover:text-amber-600"
-												: "text-white/90 hover:text-gray-900"
-										}`}
-										href={`#${item.id}`}
-									>
-										{item.label}
-									</Link>
-								</li>
-							))}
+							<li>
+								<Link
+									className={`font-medium text-base ${
+										scrolled
+											? "text-gray-800 hover:text-amber-600"
+											: "text-white/90 hover:text-gray-900"
+									} flex items-center gap-2`}
+									href="/advogado-trabalhista"
+								>
+									<Briefcase className="h-5 w-5" />
+									Advogado Trabalhista
+								</Link>
+							</li>
 						</ul>
 					</nav>
 
@@ -76,7 +80,7 @@ export function Header() {
 								className={scrolled ? "text-gray-800" : "text-amber-100"}
 							/>
 						</SheetTrigger>
-						<SheetContent className="bg-[#0f1b2b]">
+						<SheetContent className="bg-gradient-to-br from-slate-900 via-blue-950 to-slate-800 backdrop-blur-sm transition-colors duration-300">
 							<SheetHeader>
 								<SheetTitle className="text-white">
 									Menu de navegação
@@ -84,19 +88,20 @@ export function Header() {
 							</SheetHeader>
 							<nav className="flex w-full flex-col items-center justify-center">
 								<ul className="flex w-full flex-col items-center justify-center">
-									{scrollHeaderItems.map((item) => (
-										<li
-											key={item.id}
-											className="w-full border-white/50 border-b py-3 last:border-b-0"
+									<li className="w-full border-white/50 border-b py-3 last:border-b-0">
+										<SheetClose
+											className="flex items-center justify-center text-white"
+											asChild
 										>
-											<SheetClose
-												className="flex items-center justify-center text-white"
-												asChild
+											<Link
+												href="/advogado-trabalhista"
+												className="flex items-center gap-2"
 											>
-												<Link href={`#${item.id}`}>{item.label}</Link>
-											</SheetClose>
-										</li>
-									))}
+												<Briefcase className="h-5 w-5" />
+												Advogado Trabalhista
+											</Link>
+										</SheetClose>
+									</li>
 								</ul>
 							</nav>
 						</SheetContent>

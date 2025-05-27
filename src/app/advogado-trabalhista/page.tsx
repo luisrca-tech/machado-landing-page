@@ -1,7 +1,7 @@
 import Office from "public/images/officePhoto.jpg";
 import { Acting } from "~/components/section/Acting";
+import { AdvogadoTrabalhistaHeroSection } from "~/components/section/AdvogadoTrabalhistaHero";
 import { Faq } from "~/components/section/Faq";
-import { HeroSection } from "~/components/section/Hero";
 import { OurBenefits } from "~/components/section/OurBenefits";
 import { WhatTheySay } from "~/components/section/WhatTheySay";
 import { WhoWeAre } from "~/components/section/WhoWeAre";
@@ -11,8 +11,8 @@ export default function AdvogadoTrabalhistaPage() {
 	return (
 		<main>
 			<section className="relative bg-[#0f1b2b]">
-				<Container className="z-10 px-0 py-8">
-					<HeroSection />
+				<Container className="z-10 px-0">
+					<AdvogadoTrabalhistaHeroSection />
 				</Container>
 			</section>
 			<section className="py-10 lg:py-16">
