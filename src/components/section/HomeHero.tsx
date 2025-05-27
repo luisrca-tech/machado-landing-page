@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Award, CheckCircle, MapPin, Phone, Scale, Users } from "lucide-react";
 import Image from "next/image";
-import Rafael from "public/images/rafaelBgTransparent.png";
+import OfficePhoto from "public/images/officePhoto.jpg";
 
 import Link from "next/link";
 import { WppButton } from "../ui/WppButton";
@@ -107,43 +107,41 @@ export function HomeHeroSection() {
 						</div>
 					</div>
 
-					{/* Right Column - Professional Image & Trust Elements */}
+					{/* Right Column - Office Info & Trust Elements */}
 					<div className="animation-delay-300 relative animate-fade-in">
-						{/* Professional Photo */}
+						{/* Office Card */}
 						<div className="relative">
 							<Card className="border-white/20 bg-gradient-to-br from-white/10 to-white/5 p-8 shadow-2xl backdrop-blur-sm">
 								<Image
-									src={Rafael}
-									alt="Dr. Rafael Machado - Advogado Especialista"
-									className="mb-6 h-96 w-full rounded-lg object-cover object-top"
+									src={OfficePhoto}
+									alt="Machado Advogados - Escritório de Advocacia"
+									className="mb-6 h-96 w-full rounded-lg object-cover object-center"
 								/>
 
-								{/* Name and Title */}
+								{/* Office Name and Description */}
 								<div className="space-y-2 text-center">
 									<h3 className="font-bold text-2xl text-white">
-										Dr. Rafael Machado
+										Machado Advogados
 									</h3>
 									<p className="font-medium text-amber-400">
-										Advogado Especialista
+										Excelência em Advocacia
 									</p>
-									<p className="text-slate-300 text-sm">OAB/GO 00.000</p>
+									<p className="text-slate-300 text-sm">Desde 2015</p>
 								</div>
 
-								{/* Credentials */}
+								{/* Office Features */}
 								<div className="mt-6 space-y-3">
 									<div className="flex items-center gap-2 text-slate-300">
 										<Award className="h-4 w-4 text-amber-400" />
-										<span className="text-sm">
-											Pós-graduado em Direito Civil
-										</span>
+										<span className="text-sm">Escritório Especializado</span>
 									</div>
 									<div className="flex items-center gap-2 text-slate-300">
 										<Users className="h-4 w-4 text-amber-400" />
-										<span className="text-sm">Membro da OAB Goiás</span>
+										<span className="text-sm">Equipe Qualificada</span>
 									</div>
 									<div className="flex items-center gap-2 text-slate-300">
 										<Scale className="h-4 w-4 text-amber-400" />
-										<span className="text-sm">Especialista em Litígios</span>
+										<span className="text-sm">Atendimento Personalizado</span>
 									</div>
 								</div>
 							</Card>
@@ -161,8 +159,8 @@ export function HomeHeroSection() {
 						{/* Trust Indicators */}
 						<div className="mt-8 grid grid-cols-2 gap-4">
 							<Card className="border-white/10 bg-white/5 p-4 text-center backdrop-blur-sm">
-								<div className="font-bold text-green-400 text-lg">100%</div>
-								<div className="text-slate-300 text-xs">Taxa de Sucesso</div>
+								<div className="font-bold text-green-400 text-lg">+500</div>
+								<div className="text-slate-300 text-xs">Casos Resolvidos</div>
 							</Card>
 							<Card className="border-white/10 bg-white/5 p-4 text-center backdrop-blur-sm">
 								<div className="font-bold text-blue-400 text-lg">24h</div>
