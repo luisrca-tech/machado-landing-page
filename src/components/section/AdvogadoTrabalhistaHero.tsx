@@ -12,7 +12,7 @@ export function AdvogadoTrabalhistaHeroSection() {
   return (
     <div className="relative min-h-screen overflow-hidden bg-gradient-to-br from-slate-900 via-blue-950 to-slate-800 pt-8">
       {/* Background Elements */}
-      <div className="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg%20width%3D%2240%22%20height%3D%2240%22%20viewBox%3D%220%200%2040%2040%22%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%3E%3Cpath%20d%22M0%200h40v40H0z%22%20fill%3D%22%23ffffff%22%20fill-opacity%3D%220.02%22/%3E%3C/svg%3E')] opacity-20" />
+      <div className="absolute inset-0 bg-[url('/images/pattern.svg')] opacity-20" />
 
       {/* Gradient Overlays */}
       <div className="absolute top-0 left-0 h-full w-1/2 bg-gradient-to-r from-amber-500/10 to-transparent" />
