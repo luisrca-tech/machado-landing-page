@@ -78,7 +78,6 @@ export function HomeHeroSection() {
 									"Direito Previdenciário",
 									"Direito Penal",
 									"Direito Família",
-									"Direito Previdenciário",
 								].map((area, index) => (
 									<div
 										key={index + area}
