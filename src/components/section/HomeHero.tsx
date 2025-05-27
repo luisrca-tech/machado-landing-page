@@ -69,16 +69,16 @@ export function HomeHeroSection() {
 						{/* Specialties */}
 						<div className="space-y-4">
 							<h3 className="font-semibold text-lg text-white">
-								Estados de atuação:
+								Áreas de atuação:
 							</h3>
 							<div className="grid grid-cols-2 gap-3">
 								{[
-									"Goiás",
-									"São Paulo",
-									"Rio de Janeiro",
-									"Mato Grosso",
-									"Tocantins",
-									"Pará",
+									"Direito Civil",
+									"Direito Trabalhista",
+									"Direito Previdenciário",
+									"Direito Penal",
+									"Direito Família",
+									"Direito Previdenciário",
 								].map((area, index) => (
 									<div
 										key={index + area}
